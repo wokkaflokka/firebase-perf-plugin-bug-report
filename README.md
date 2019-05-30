@@ -43,7 +43,7 @@ You can optionally output the results to a file, which can then be measured. Suc
       4.0K	build.output.nobug.log
 ```
 
-2. `moredeps` -- this is identical to the `bug` module, but adds some random dependencies to demonstrate that the
+3. `moredeps` -- this is identical to the `bug` module, but adds some random dependencies to demonstrate that the
 build log size will scale with the corresponding project size.
 
 ```
@@ -59,3 +59,17 @@ You can optionally output the results to a file, which can then be measured. Suc
 ```
 
 By adding a few dependencies, build log is now well over 34x the size it was based on the minimal reproduction steps.
+
+2. `nobug-1.1.5` -- this is identical to the `bug` module, but uses `v1.1.5` of the perf plugin. This version works fine.
+
+```
+    $ ./gradlew clean nobug-1.1.5:bundleRelease
+```
+
+You can optionally output the results to a file, which can then be measured. Such a procedure might look like:
+
+```
+    $ ./gradlew clean nobug-1.1.5:bundleRelease &> build.output.nobug.log
+    $ du -h build.output.nobug.log 
+      4.0K	build.output.nobug.log
+```

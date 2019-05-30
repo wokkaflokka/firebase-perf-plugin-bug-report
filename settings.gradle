@@ -1,1 +1,1 @@
-include ':bug', ':nobug', ':moredeps'
+include ':bug', ':nobug', ':moredeps', ':nobug-1.1.5'
