@@ -8,7 +8,7 @@ to an older version of the plugin.
 
 ### Details/STR
 
-Three samples are provided:
+Four samples are provided:
 
 1. `bug` -- this is a minimal reproduction of the bug and contains only the firebase performance dependency + kotlin and android api's.
 To reproduce the output, move to the root of the project and run:
