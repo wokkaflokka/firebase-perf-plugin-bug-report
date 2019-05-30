@@ -1,0 +1,54 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.google.firebase:perf-plugin:1.2.1'
+    }
+}
+
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+apply plugin: 'com.google.firebase.firebase-perf'
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.perf.plugin.bug.moredeps"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.firebase:firebase-perf:17.0.2'
+
+    // adding some random dependencies to get a bigger build......
+
+    api "com.facebook.stetho:stetho-okhttp3:1.5.1"
+    api "com.squareup.retrofit2:retrofit:2.5.0"
+    api "com.squareup.retrofit2:converter-gson:2.5.0"
+    api "io.reactivex.rxjava2:rxandroid:2.1.0"
+
+    api "com.apollographql.apollo:apollo-runtime:0.5.0"
+    api "com.apollographql.apollo:apollo-rx2-support:0.5.0"
+    api "com.apollographql.apollo:apollo-android-support:0.5.0"
+
+    api "com.squareup.picasso:picasso:2.71828"
+    implementation "com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0"
+
+    api "com.google.android.gms:play-services-auth:16.0.1"
+    api "com.google.firebase:firebase-core:16.0.9"
+    api "com.google.android.instantapps:instantapps:1.1.0"
+}

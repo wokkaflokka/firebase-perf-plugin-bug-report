@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.google.firebase:perf-plugin:1.2.1'
+    }
+}
+
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+
+apply plugin: 'com.google.firebase.firebase-perf'
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.perf.plugin.bug"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.firebase:firebase-perf:17.0.2'
+}
